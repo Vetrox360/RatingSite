@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Picture Rating Website</title>
+    <link rel="icon" href="./logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://unpkg.com/realm-web@1.7.0/dist/bundle.iife.js"></script>
+  </head>
+  <body>
+    <div class="navigation">
+      <input class="search" type="text" id="search-input" placeholder="Search" />
+      <div class="logo">
+        <img src="./logo.svg" alt="asdas" id="logo-img" />
+        <h1>Rating website</h1>
+      </div>
+    </div>
+  <div class="container">
+    <table id="picture-feed">
+      <thead>
+        <tr>
+          <th>Obraz</th>
+          <th>Imię</th>
+          <th>Ocena</th>
+          <th>Opis</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+    <div class="forms">
+    <form id="picture-form">
+      <input class="picture-import" type="file" placeholder="Name" id="picture-file" accept="image/*" />
+      <input type="text" id="person-name" placeholder="Name" required /><br>
+
+      <input type="number" id="picture-rating" placeholder="Rating" min="1" max="10" required /><br>
+      <input type="text" id="picture-description" placeholder="Description" required /><br>
+      <button class="reset" type="reset">Delete</button>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
