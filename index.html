@@ -9,12 +9,13 @@
   <body>
     <div class="navigation">
       <input class="search" type="text" id="search-input" placeholder="Search" />
+      <button id="theme-toggle" class="theme-toggle"></button>
       <div class="logo">
         <img src="./logo.svg" alt="asdas" id="logo-img" />
         <h1>Rating website</h1>
       </div>
     </div>
-  <div class="container">
+    <div class="tabelka">
     <table id="picture-feed">
       <thead>
         <tr>
@@ -35,12 +36,9 @@
       <input type="number" id="picture-rating" placeholder="Rating" min="1" max="10" required /><br>
       <input type="text" id="picture-description" placeholder="Description" required /><br>
       <button class="reset" type="reset">Delete</button>
-      <button type="submit">Save</button>
+      <button class="save" type="submit">Save</button>
     </form>
-  </div>
-  
-
-
+  </div>`                                       
     <script src="script.js"></script>
   </body>
 </html>

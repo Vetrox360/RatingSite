@@ -98,3 +98,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', () => {
+  const body = document.body;
+  body.classList.toggle('light-mode'); // Add/remove 'light-mode' class
+});
+
+

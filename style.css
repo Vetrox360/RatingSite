@@ -4,11 +4,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  margin: 20px 40px 0px 40px;
-  padding-top: 100px;
   background-color: #171717;
   color: white;
-
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -26,77 +23,105 @@ h1 {
 
 .navigation {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
   height: 100px; /* Set the height of the navigation bar */
   background-color: #171717; /* Optional background color */
   color: white;
   display: flex; /* Enable Flexbox for horizontal arrangement */
   align-items: center; /* Align content vertically */
-  padding: 10px 00px 0px 30px; /* Add some padding */
+  padding: 2vw 0px 0px 2vw;
+}
+
+#search-input {
+  border-radius: 50px;
+  width: 47vw;
+  color: #c5384b;
+  background-color: #2b2b2b;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #c5384b;
+  box-shadow: 0 0 5px #c5384b;
 }
 
 .forms{
   position: fixed;
   top: 120px;
-  right: 40px;
-  width: 30%;
-  height: fit-content;
+  right: 2vw;
+  width: 47vw;
+  height: 80vh;
   padding: 40px;
   background-color: #2b2b2b;
   border-radius: 30px;
-  display: flex; /* Apply flexbox for stacking */
-  flex-direction: column; /* Stack elements vertically */
+  display: flex;
+  flex-direction: column;
 }
+
+div {
+  box-sizing: border-box;
+}
+
+.tabelka {
+  border-radius: 30px;
+  overflow-y: auto;
+  position: fixed;
+  top: 120px;
+  left: 2vw;
+  height: 80vh;
+  width: 47vw;
+    /* WebKit scrollbar styles */
+    &::-webkit-scrollbar {
+      width: 0px; /* Adjust scrollbar width */
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: transparent; /* Remove background color */
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #c5384b; /* Set thumb color */
+      border-radius: 5px; /* Add rounded corners */
+  
+}
+}
+
 
 input[type="text"],
 input[type="number"],
 textarea {
-  padding-left: 25px;
-  margin: 10px;
+  padding-left: 2vw;
+  margin: 1vh;
   border: 1px solid #171717;
   background-color: #171717;
   border-radius: 50px;
-  height: 70px;
-  width: 300px;
+  height: 7vh;
+  width: 30vw;
   font-size: 120%;
 }
 
-textarea {
-  width: 150px;
-  height: 25.6px;
-  resize: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: block;
-  line-height: 25.6px;
-}
 
 .picture-import {
-  display: flex;
-  padding: 16px;
-  margin: 10px;
-  flex-direction: row;
+  padding: 0.5vw 0vw 0.5vw 0.5vw;
+  margin: 1vh;
+  border: 1px solid #171717;
   background-color: #171717;
   border-radius: 50px;
-  width: fit-content;
-  width: 292px;
+  width: 31.5vw;
   font-size: 120%;
+
 }
 
 input[type="file"] {
   color: rgb(95, 95, 95);
-  display: flex;
-  align-items: center;
-  border: none;
 }
 
 input[type="file"]::-webkit-file-upload-button {
   background-color: #0d0d0d;
   color: #c5384b;
-  padding: 10px ;
+  padding: 0.9vw ;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -108,7 +133,7 @@ input[type="file"]::-webkit-file-upload-button {
   border-radius: 30px;
 }
 
-button {
+.save {
   margin: 10px;
   background-color: #c5384b;
   color: white;
@@ -120,6 +145,31 @@ button {
   font-size: 120%;
 }
 
+.theme-toggle {
+  margin: 20px;
+  height: 70px;
+  width: 150px;
+  background-color: #2b2b2b00;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 120%;
+  background-image: url("moon.png"); /* Set initial background image for light mode */
+  background-repeat: no-repeat; /* Prevent image tiling */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Stretch the image to cover the button */
+  width: 30px; /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */
+}
+
+.light-mode .theme-toggle {
+  background-color: #dcdfe400;
+  background-image: url("sun.png"); /* Set background image for dark mode */
+}
+
+
+
 .reset {
   margin: 10px 0px 10px 10px;
   background-color: #171717;
@@ -129,13 +179,12 @@ button {
   cursor: pointer;
   height: 70px;
   width: 150px;
+  font-size: 120%;
 }
 
 table {
-  width: 60%;
-  max-width: 67%;
+  width: 100%;
   border-collapse: collapse;
-  border-radius: 30px;
   background-color: #2b2b2b;
 }
 
@@ -151,25 +200,25 @@ th{
   height: 30px;
 }
 
-th:first-child {
-  border-radius: 30px 0 0 0px;
-}
-
-th:last-child {
-  border-radius: 0 30px 0px 0;
-}
-
 tr:nth-child(odd) {
   background-color: #2e2e2e;
 }
 
 
 img {
-width: 200px;
-  height: 200px;
+width: 12vw;
+  height: 12vw;
+  min-width: 100px;
+  min-height: 100px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 15px;
   margin: 10px;
+}
+
+#logo-img {
+  border-radius: 0px;
+  min-width: 10px;
+  min-height: 10px;
 }
 
 .or {
@@ -192,19 +241,6 @@ width: 200px;
   height: 35px;
 }
 
-#search-input {
-  align-self: center;
-  border-radius: 50px;
-  width: 55%;
-  color: #c5384b;
-  background-color: #2b2b2b;
-}
-
-#search-input:focus {
-  outline: none;
-  border-color: #c5384b;
-  box-shadow: 0 0 5px #c5384b;
-}
 
 input:focus,
 textarea:focus {
@@ -225,6 +261,7 @@ textarea:focus {
   overflow: auto;
   background-color: rgb(0, 0, 0);
 }
+
 
 .modal-content {
   background-color: #fefefe;
@@ -249,98 +286,104 @@ textarea:focus {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
-@media (max-width: 1000px) {
-  /* Styles for smaller screens */
-body {
-  align-items: center;
-  margin: 10px;
-  padding: 0px;
+
+/* Add these styles to your existing CSS file or create a new one */
+body.light-mode {
+  background-color: white; /* Light mode background color */
+  color: black; /* Light mode text color */
 }
 
-  table {
-    margin-top: 200px;
-    width: 100%;
-    max-width: 100%;
-    min-width: none;
-  }
-
-  img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .search {
-    width: 100%;
-  }
-
-  .navigation {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    height: auto;
-  }
-
-  .logo {
-    margin-top: 10px;
-  }
-
-  .forms {
-    position: fixed;
-    top: 500px;
-    width: 80%;
-    padding: 0px;
-    box-sizing: border-box;
-    align-items: center;
-    width: fit-content;
-    margin-bottom: 300px;
-    box-shadow: 0px 5px 20px #0d0d0d;
-  }
-
-  input[type="text"],
-input[type="number"],
-textarea {
-  height: 50px;
-  width: 300px;
-  font-size: 100%;
+.light-mode input[type="text"],
+.light-mode input[type="number"],
+.light-mode textarea {
+  background-color: #ffffff; /* Light mode input background color */
+  border: 1px solid #ffffff;
 }
 
-button {
-  margin: 10px;
-  background-color: #c5384b;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  height: 50px;
-  width: 160px;
-  font-size: 100%;
+.ligh-mode input[type="file"]::-webkit-file-upload-button {
+  background-color: #DCDFE4;
 }
 
-.reset {
-  margin: 10px 0px 10px 10px;
-  background-color: #171717;
+.ligh-mode .picture-import {
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+}
+
+
+.ligh-mode .reset {
+  background-color: #ffffff;
   color: #757575;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  height: 50px;
-  width: 160px;
 }
 
-.picture-import {
-  display: flex;
-  padding: 8px;
-  margin: 10px;
-  flex-direction: row;
-  background-color: #171717;
-  border-radius: 50px;
-  width: fit-content;
-  width: 310px;
-  font-size: 100%;
+.light-mode .forms {
+  background-color: #DCDFE4;
+}
+.light-mode .tabelka {
+  background-color: #DCDFE4;
+}
+.light-mode .navigation {
+  background-color: #ffffff;
+}
+.ligh-mode #search-input {
+  background-color: #DCDFE4;
+}
+/* Add similar styles for other elements as needed */
+.ligh-mode table {
+  background-color: #DCDFE4;
 }
 
+.light-mode th{
+  background-color: #DCDFE4;
 }
 
+.light-mode tr:nth-child(odd) {
+  background-color: #F1F2F4;
+}
+.ligh-mode :root {
+  color-scheme: light;
+}
+.light-mode input[type="file"] {
+  color: #333333; /* Change the text color for light mode */
+  background-color: #ffffff; /* Change the background color for light mode */
+  border: 1px #ffffff;
+}
 
+.light-mode input[type="file"]::-webkit-file-upload-button {
+  background-color: #F1F2F4; /* Change the background color for the upload button in light mode */
+  color: #c5384b; /* Change the text color for the upload button in light mode */
+}
+.light-mode #search-input {
+  color: #333333; /* Change the text color for light mode */
+  background-color: #DCDFE4; /* Change the background color for light mode */
+}
+.light-mode .reset {
+  background-color: #ffffff; /* Set the desired background color for the delete button in light mode */
+  color: #333333; /* Set the desired text color for the delete button in light mode */
+}
+.light-mode tr:nth-child(even) {
+  background-color: #DCDFE4; /* Set the desired background color for even rows in light mode */
+}
 
+  
+@media (max-width: 890px) {
+  .navigation {
+      height: fit-content; /* Set the height of the navigation bar */
+      padding: 2vw;
+    }
+    #search-input {
+      width: 60vw;
+      height: min-content;
+      min-height: 10vw;
+    }
+    .forms {
+      display: none;
+    }
 
+    .tabelka {
+      width: 96vw;
+    }
+    h1 {
+      display: none;
+    }
+
+}
