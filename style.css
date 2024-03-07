@@ -248,7 +248,7 @@ textarea:focus {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   /* Styles for smaller screens */
 body {
   align-items: center;
