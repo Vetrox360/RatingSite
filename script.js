@@ -265,4 +265,27 @@ async function refreshPictureFeed() {
   // ... (existing code for lazy loading and delete button event listener)
 }
 
+// Function to check if the device is in mobile mode
+function isMobileMode() {
+  return window.matchMedia("(max-width: 767px)").matches;
+}
 
+// Check the device mode on page load
+window.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  if (isMobileMode()) {
+    body.classList.add("mobile-mode");
+  } else {
+    body.classList.remove("mobile-mode");
+  }
+});
+
+// Listen for window resize event and update the device mode
+window.addEventListener("resize", function () {
+  const body = document.body;
+  if (isMobileMode()) {
+    body.classList.add("mobile-mode");
+  } else {
+    body.classList.remove("mobile-mode");
+  }
+});

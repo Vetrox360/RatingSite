@@ -571,7 +571,7 @@ body.light-mode {
   }
 }
 
-@media (max-width: 830px) {
+@media (max-width: 767px) {
   body {
     padding: 0rem 0.5rem;
   }
@@ -661,6 +661,7 @@ body.light-mode {
   }
 }
 
+
 .modal {
   display: none;
   position: fixed;
@@ -671,6 +672,9 @@ body.light-mode {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8);
+  animation: slideUp 0.5s cubic-bezier(0.48, 0.02, 0.21, 1);
+  animation-fill-mode: both;
+  opacity: 0;
 }
 
 .modal-content {
