@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const mongodb = app.currentUser.mongoClient("mongodb-atlas");
     const collection = mongodb.db("rating-data").collection("data");
     document
-      .getElementById("picture-form")
+      .querySelector(".picture-form")
       .addEventListener("submit", async function (e) {
         e.preventDefault();
         const personName = document.getElementById("person-name").value;
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           await collection.insertOne(pictureData);
           refreshPictureFeed();
         }
-        document.getElementById("picture-form").reset();
+        document.querySelector(".picture-form").reset();
       });
     async function refreshPictureFeed() {
       const pictures = await collection.find(
@@ -181,32 +181,88 @@ function removePreview() {
   dropZoneText.style.display = "block";
   fileInput.value = "";
 }
-// Add this event listener for the delete button click event
 document.querySelector(".forms").addEventListener("click", function (e) {
   if (e.target.closest(".reset")) {
     removePreview();
   }
 });
-const searchButton = document.querySelector('.searchb');
-const add = document.querySelector('.add');
-const searchInput = document.querySelector('.search');
 
-searchButton.addEventListener('click', () => {
-  searchInput.focus();
+// Get the modal and close button elements
+const modal = document.querySelector(".modal");
+const closeButton = document.querySelector(".close");
+
+// Get the image element in the .dock class
+const dockImage = document.querySelector(".dock img");
+
+// Open the modal when the image is clicked
+dockImage.addEventListener("click", () => {
+  modal.style.display = "block";
 });
 
-const addButton = document.querySelector('.add');
-const forms = document.querySelector('.forms');
-let isFormsVisible = false;
+// Close the modal when the close button is clicked
+closeButton.addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
-addButton.addEventListener('click', () => {
-  isFormsVisible = !isFormsVisible;
-
-  if (isFormsVisible) {
-    forms.style.display = 'flex';
-    addButton.style.backgroundImage = 'url("arrow.png")';
-  } else {
-    forms.style.display = 'none';
-    addButton.style.backgroundImage = 'url("add.png")';
+// Close the modal when clicking outside the modal content
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
   }
 });
+
+// Get all the file dropzones
+const fileDropZones = document.querySelectorAll(".file-drop-zone");
+
+// Attach event listeners to each file dropzone
+fileDropZones.forEach((dropZone) => {
+  dropZone.addEventListener("click", () => {
+    fileInput.click();
+  });
+
+  dropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZone.classList.add("dragover");
+  });
+
+  dropZone.addEventListener("dragleave", () => {
+    dropZone.classList.remove("dragover");
+  });
+
+  dropZone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    dropZone.classList.remove("dragover");
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      fileInput.files = files;
+      showPreview(files[0]);
+    }
+  });
+});
+
+async function refreshPictureFeed() {
+  const pictures = await collection.find(
+    // ... (existing code)
+  );
+  const pictureFeed = document.querySelector("#picture-feed");
+  pictureFeed.innerHTML = "";
+  pictures.forEach((picture) => {
+    const pictureDiv = document.createElement("div");
+    pictureDiv.classList.add("picture-item", "new-item"); // Add the 'new-item' class initially
+    pictureDiv.setAttribute(
+      "data-src",
+      picture.pictureFile || picture.pictureUrl
+    );
+    // ... (existing code to set pictureDiv content)
+    pictureFeed.appendChild(pictureDiv);
+
+    // Remove the 'new-item' class after a short delay to trigger animations
+    setTimeout(() => {
+      pictureDiv.classList.remove("new-item");
+    }, 100); // Adjust the delay time as desired
+  });
+
+  // ... (existing code for lazy loading and delete button event listener)
+}
+
+

@@ -4,18 +4,17 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #000000;
+  background-color: #171717;
   color: white;
   max-width: 1500px;
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   margin-bottom: 1rem;
   overflow-y: hidden;
   user-select: none;
-  padding: 0rem 0rem;
+  padding: 0rem 4rem;
 }
 
 input {
@@ -25,11 +24,9 @@ input {
 h1 {
   color: #ffffff;
   text-align: center;
-  display: none;
 }
 
 .content {
-  flex: 1;
   display: flex;
   flex-direction: row;
   gap: 2rem;
@@ -37,61 +34,14 @@ h1 {
 }
 
 .navigation {
-  height: 15vh;
-  background-color: #000000;
+  height: 100px;
+  background-color: #171717;
   color: white;
   display: flex;
   align-items: center;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  padding: 0rem 4rem;
-}
-
-
-.mobile-navigation {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #000000; /* Adjust background color */
-  color: white;
-  padding: 20px;
-  display: flex; /* Enable Flexbox for horizontal arrangement */
-  justify-content: space-around; /* Distribute elements evenly */
-  height: 6vh;
-  z-index: 5;
-}
-
-.layout,
-.searchb,
-.add
- {
-  background-color: #82828200;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  height: 80px;
-  width: 80px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 250%;
-  border-radius: 0px;
-  background-repeat: no-repeat; /* Prevent image tiling */
-  background-position: center; /* Center the image */
-  background-size: cover; /* Stretch the image to cover the button */
-}
-.add {
-  background-image: url("add.png");
-}
-.searchb {
-  background-image: url("search.png");
-}
-.layout {
-  background-image: url("layout.png");
 }
 
 form {
@@ -117,7 +67,8 @@ form {
 }
 
 #search-input {
-  width: 50.2vw;
+  border-radius: 50px;
+  width: 41.2vw;
   color: #c5384b;
   background-color: #2b2b2b;
 }
@@ -135,14 +86,16 @@ div {
 input[type="text"],
 input[type="number"],
 textarea {
-  padding-left: 5vw;
+  padding-left: 2vw;
   border: 1px solid #171717;
   background-color: #171717;
-  border-radius: 70px;
-  height: 120px;
-
-  width: 75vw;
-  font-size: 180%;
+  border-radius: 50px;
+  height: 62px;
+  animation: slideUp 0.5s cubic-bezier(0.48, 0.02, 0.21, 1), fadeIn 1s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
+  width: 25vw;
+  font-size: 120%;
 }
 
 .picture-import {
@@ -174,13 +127,11 @@ input[type="file"]::-webkit-file-upload-button {
   border-radius: 50px;
   cursor: pointer;
   height: 70px;
-  width: 250px;
-  font-size: 180%;
-  padding: 50px;
-  text-align: center; /* Horizontally center text */
-  display: flex; /* Enable Flexbox for vertical centering */
-  justify-content: center; /* Horizontally center content within button */
-  align-items: center; /* Vertically center content within button */
+  width: 150px;
+  font-size: 120%;
+  animation: slideUp 0.5s cubic-bezier(0.48, 0.02, 0.21, 1), fadeIn 1s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
 }
 
 .reset {
@@ -190,13 +141,11 @@ input[type="file"]::-webkit-file-upload-button {
   border-radius: 50px;
   cursor: pointer;
   height: 70px;
-  width: 250px;
-  font-size: 180%;
-  padding: 50px;
-  text-align: center; /* Horizontally center text */
-  display: flex; /* Enable Flexbox for vertical centering */
-  justify-content: center; /* Horizontally center content within button */
-  align-items: center; /* Vertically center content within button */
+  width: 150px;
+  font-size: 120%;
+  animation: slideUp 0.5s cubic-bezier(0.48, 0.02, 0.21, 1), fadeIn 1s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
 }
 
 table {
@@ -253,9 +202,8 @@ tr:nth-child(odd) {
 }
 
 #logo-img {
-  width: 75px;
-  height: 75px;
-  margin: 0px;
+  width: 35px;
+  height: 35px;
 }
 
 input:focus,
@@ -265,36 +213,18 @@ textarea:focus {
   box-shadow: 0 0 5px #c5384b;
 }
 
-/* Add these styles to your existing CSS file or create a new one */
-
 .forms {
-  position: fixed;
-  bottom: 6vh;
-  right: 0px;
-  z-index: 4;
-  width: 95%;
-  height: fit-content;
+  width: 40vw;
+  height: 85vh;
   padding: 40px;
-  background-color: #000000;
-  border-radius: 70px;
-  display: ;
+  background-color: #2b2b2b;
+  border-radius: 30px;
+  display: flex;
   flex-direction: column;
-  margin: 2.5%;
-  padding-bottom: 300px;
-  display: none;
+  animation: slideUp 0.7s cubic-bezier(0.48, 0.02, 0.21, 1), fadeIn 1s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
 }
-
-.form-overlay {
-  position: fixed; /* Ensures the overlay covers the entire viewport */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Darken the background with transparency */
-  backdrop-filter: blur(5px); /* Apply blur effect */
-  display: none; /* Initially hide the overlay */
-}
-
 
 .btns {
   display: flex;
@@ -304,15 +234,14 @@ textarea:focus {
 }
 
 .tabelka {
-  flex: 1;
-  height: auto;
-  margin-bottom: 120px;
   background-color: #2b2b2b;
+  border-radius: 30px;
   overflow-y: auto;
-  border-radius: 70px;
-
-  height: 79vh;
-  width: 100%;
+  animation: slideUp 0.5s cubic-bezier(0.48, 0.02, 0.21, 1), fadeIn 1s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
+  height: 85vh;
+  width: 47vw;
   /* WebKit scrollbar styles */
   &::-webkit-scrollbar {
     width: 0px; /* Adjust scrollbar width */
@@ -327,10 +256,29 @@ textarea:focus {
     border-radius: 5px; /* Add rounded corners */
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 #picture-feed {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding: 40px;
   height: 100%;
@@ -349,6 +297,7 @@ textarea:focus {
   }
 }
 
+
 .picture-item {
   display: flex;
   flex-direction: column;
@@ -361,12 +310,19 @@ textarea:focus {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 28vh;
+  height: 400px;
   width: 100%;
   overflow: hidden;
   box-shadow: -6px 13px 19px #0000003a;
   box-sizing: border-box;
   margin-bottom: 50px;
+  animation: slideUp 0.5s cubic-bezier(0.48, 0.02, 0.21, 1), fadeIn 1s ease-out;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+.new-item {
+  animation: none;
+  opacity: 1; /* Reset opacity for already loaded items */
 }
 
 .picture-item .content {
@@ -387,12 +343,12 @@ textarea:focus {
   left: 17px;
   background-color: #2b2b2bb1;
   backdrop-filter: blur(10px);
-  width: 80px;
-  height: 80px;
-  border-radius: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
   color: #ffffff;
   z-index: 3;
-  font-size: 250%;
+  font-size: 170%;
   border: 2px solid #ffffff0f;
   display: flex;
   justify-content: center;
@@ -413,7 +369,7 @@ textarea:focus {
   height: 100%;
   background-image: linear-gradient(transparent, #000000);
   z-index: 2;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .picture-item h3 {
@@ -505,7 +461,7 @@ body.light-mode {
 }
 
 .theme-toggle {
-  margin-top: 6px;
+  /* margin-top: 6px; */
   background-color: #2b2b2b00;
   border: none;
   border-radius: 50px;
@@ -515,8 +471,8 @@ body.light-mode {
   background-repeat: no-repeat; /* Prevent image tiling */
   background-position: center; /* Center the image */
   background-size: cover; /* Stretch the image to cover the button */
-  width: 75px; /* Adjust width as needed */
-  height: 75px; /* Adjust height as needed */
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
 }
 
 .light-mode .theme-toggle {
@@ -551,13 +507,13 @@ body.light-mode {
 
 .file-drop-zone {
   background-color: #171717;
-  border-radius: 50px;
+  border-radius: 30px;
   padding: 20px;
   text-align: center;
   cursor: pointer;
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -602,106 +558,146 @@ body.light-mode {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 035px;
+  border-radius: 20px;
 }
-@media (min-width: 891px) {
-  /* Styles for desktop/larger screens */
+
+.dock {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  #picture-feed {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 830px) {
   body {
-    padding: 0rem 4rem;
+    padding: 0rem 0.5rem;
   }
-
-  .navigation {
-    height: 100px;
-    padding: 0;
+  #picture-feed {
+    padding: 1rem;
   }
-
-  #search-input {
-    width: 41.2vw;
-  }
-
-  .forms {
-    display: flex;
-    width: 40vw;
-    height: 85vh;
-    padding: 40px;
-    background-color: #2b2b2b;
-    border-radius: 30px;
-    position: static;
-    margin: 0;
-  }
-
-  .tabelka {
-    width: 47vw;
-    height: 85vh;
-    margin-bottom: 0;
-    border-radius: 30px;
-  }
-
   .picture-item {
-    height: 400px;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
   }
-
-  .picture-item .rating {
-    width: 60px;
-    height: 60px;
-    font-size: 170%;
-  }
-
-  .mobile-navigation {
-    display: none;
-  }
-
-  h1 {
-    display: block;
+  .picture-item::after {
+    border-radius: 0.5rem;
   }
 
   input[type="text"],
   input[type="number"],
   textarea {
-    padding-left: 2vw;
-    height: 62px;
-    width: 25vw;
-    font-size: 120%;
+    width: calc(250px - 5vw);
+    padding-left: 5vw;
   }
 
   .save,
   .reset {
-    height: 70px;
-    width: 150px;
-    font-size: 120%;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 60vw;
   }
 
-  .file-drop-zone {
+  .btns {
     width: 250px;
-    height: 250px;
   }
 
-  .delete-button {
+  .forms {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #logo-img,
+  #theme-toggle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .tabelka {
+    width: 100vw;
+    height: 70vh;
+  }
+
+  .dock {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .dock img {
     width: 40px;
     height: 40px;
-    font-size: 170%;
   }
 
-  .theme-toggle {
-    width: 40px;
-    height: 40px;
+  .navigation {
+    flex-direction: column-reverse;
+    height: fit-content; /* Set the height of the navigation bar */
+    padding: 2vw;
+    padding: 2rem 0.5rem 2rem 0.5em;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* trbl */
+  }
+  #search-input {
+    height: min-content;
+    min-height: 10vw;
+    width: 100%;
+    padding-left: 1.5rem;
   }
 
-  #logo-img {
-    width: 35px;
-    height: 35px;
-  }
-  #picture-feed {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .right {
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding-bottom: 1rem;
   }
 }
 
-@media (max-width: 890px) {
-  /* Styles for mobile/smaller screens */
-  /* Existing mobile styles from styleMobile.css */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #2b2b2b;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 30px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.light-mode .modal-content {
+  background-color: #dcdfe4;
+}
+
+.close {
+  color: #9c9c9c;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #c5384b;
+  text-decoration: none;
+  cursor: pointer;
 }
