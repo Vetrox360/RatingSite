@@ -2,43 +2,75 @@
 <html>
   <head>
     <title>Picture Rating Website</title>
-    <link rel="icon" href="./logo.svg" type="image/svg+xml">
+    <link rel="icon" href="./logo.svg" type="image/svg+xml" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://unpkg.com/realm-web@1.7.0/dist/bundle.iife.js"></script>
   </head>
   <body>
     <div class="navigation">
-      <input class="search" type="text" id="search-input" placeholder="Search" />
-      <button id="theme-toggle" class="theme-toggle"></button>
-      <div class="logo">
-        <img src="./logo.svg" alt="asdas" id="logo-img" />
-        <h1>Rating website</h1>
+      <input
+        class="search"
+        type="text"
+        id="search-input"
+        placeholder="Search"
+      />
+      <div class="right">
+        <button id="theme-toggle" class="theme-toggle"></button>
+
+        <div class="logo">
+          <img src="./logo.svg" alt="asdas" id="logo-img" />
+          <h1>Rating website</h1>
+        </div>
       </div>
     </div>
-    <div class="tabelka">
-    <table id="picture-feed">
-      <thead>
-        <tr>
-          <th>Obraz</th>
-          <th>Imię</th>
-          <th>Ocena</th>
-          <th>Opis</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-    <div class="forms">
-    <form id="picture-form">
-      <input class="picture-import" type="file" placeholder="Name" id="picture-file" accept="image/*" />
-      <input type="text" id="person-name" placeholder="Name" required /><br>
 
-      <input type="number" id="picture-rating" placeholder="Rating" min="1" max="10" required /><br>
-      <input type="text" id="picture-description" placeholder="Description" required /><br>
-      <button class="reset" type="reset">Delete</button>
-      <button class="save" type="submit">Save</button>
-    </form>
-  </div>`                                       
+    <div class="content">
+      <div class="tabelka">
+        <div id="picture-feed"></div>
+      </div>
+
+      <div class="forms">
+        <form id="picture-form">
+          <div class="file-drop-zone">
+            <div class="file-drop-zone-content">
+              <span id="drop-zone-text">+</span>
+            </div>
+            <input
+              type="file"
+              id="picture-file"
+              accept="image/*"
+              style="display: none"
+            />
+            <div class="file-preview"></div>
+          </div>
+          <input type="text" id="person-name" placeholder="Name" required />
+
+          <input
+            type="number"
+            id="picture-rating"
+            placeholder="Rating"
+            min="1"
+            max="10"
+            required
+          />
+          <input
+            type="text"
+            id="picture-description"
+            placeholder="Description"
+            required
+          />
+          <div class="btns">
+            <button class="reset" type="reset">Delete</button>
+            <button class="save" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mobile-navigation">
+      <button class="searchb" type="button"></button>
+      <button class="add" type="button"></button>
+      <button class="layout" type="button"></button>
+    </div>    
     <script src="script.js"></script>
   </body>
 </html>

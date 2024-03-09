@@ -3,40 +3,121 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #171717;
+  font-family: "Poppins", sans-serif;
+  background-color: #000000;
   color: white;
+  max-width: 1500px;
+  margin: 0 auto;
+
   display: flex;
   flex-direction: column;
-  align-items: left;
+  min-height: 100vh;
+  margin-bottom: 1rem;
+  overflow-y: hidden;
+  user-select: none;
+  padding: 0rem 0rem;
 }
 
-
-input{
+input {
   color: #c5384b;
 }
 
 h1 {
-  color: #c5384b;
+  color: #ffffff;
   text-align: center;
+  display: none;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .navigation {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100px; /* Set the height of the navigation bar */
-  background-color: #171717; /* Optional background color */
+  height: 300px;
+  background-color: #000000;
   color: white;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0rem 4rem;
+}
+
+
+.mobile-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000000; /* Adjust background color */
+  color: white;
+  padding: 20px;
   display: flex; /* Enable Flexbox for horizontal arrangement */
-  align-items: center; /* Align content vertically */
-  padding: 2vw 0px 0px 2vw;
+  justify-content: space-around; /* Distribute elements evenly */
+  height: 120px;
+  z-index: 5;
+}
+
+.layout,
+.searchb,
+.add
+ {
+  background-color: #82828200;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 250%;
+  border-radius: 0px;
+  background-repeat: no-repeat; /* Prevent image tiling */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Stretch the image to cover the button */
+}
+.add {
+  background-image: url("add.png");
+}
+.searchb {
+  background-image: url("search.png");
+}
+.layout {
+  background-image: url("layout.png");
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50%;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  width: 50%;
+}
+
+#pictur-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #search-input {
-  border-radius: 50px;
-  width: 47vw;
+  width: 50.2vw;
   color: #c5384b;
   background-color: #2b2b2b;
 }
@@ -47,71 +128,30 @@ h1 {
   box-shadow: 0 0 5px #c5384b;
 }
 
-.forms{
-  position: fixed;
-  top: 120px;
-  right: 2vw;
-  width: 47vw;
-  height: 80vh;
-  padding: 40px;
-  background-color: #2b2b2b;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
 div {
   box-sizing: border-box;
 }
 
-.tabelka {
-  border-radius: 30px;
-  overflow-y: auto;
-  position: fixed;
-  top: 120px;
-  left: 2vw;
-  height: 80vh;
-  width: 47vw;
-    /* WebKit scrollbar styles */
-    &::-webkit-scrollbar {
-      width: 0px; /* Adjust scrollbar width */
-    }
-  
-    &::-webkit-scrollbar-track {
-      background: transparent; /* Remove background color */
-    }
-  
-    &::-webkit-scrollbar-thumb {
-      background-color: #c5384b; /* Set thumb color */
-      border-radius: 5px; /* Add rounded corners */
-  
-}
-}
-
-
 input[type="text"],
 input[type="number"],
 textarea {
-  padding-left: 2vw;
-  margin: 1vh;
+  padding-left: 5vw;
   border: 1px solid #171717;
   background-color: #171717;
-  border-radius: 50px;
-  height: 7vh;
-  width: 30vw;
-  font-size: 120%;
-}
+  border-radius: 70px;
+  height: 120px;
 
+  width: 25vw;
+  font-size: 180%;
+}
 
 .picture-import {
   padding: 0.5vw 0vw 0.5vw 0.5vw;
-  margin: 1vh;
   border: 1px solid #171717;
   background-color: #171717;
   border-radius: 50px;
-  width: 31.5vw;
+  width: 26.5vw;
   font-size: 120%;
-
 }
 
 input[type="file"] {
@@ -121,20 +161,13 @@ input[type="file"] {
 input[type="file"]::-webkit-file-upload-button {
   background-color: #0d0d0d;
   color: #c5384b;
-  padding: 0.9vw ;
+  padding: 0.9vw;
   border: none;
   border-radius: 50px;
   cursor: pointer;
 }
 
-.container {
-  display: flex; /* Enable Flexbox */
-  justify-content: space-between; /* Distribute elements horizontally */
-  border-radius: 30px;
-}
-
 .save {
-  margin: 10px;
   background-color: #c5384b;
   color: white;
   border: none;
@@ -143,35 +176,10 @@ input[type="file"]::-webkit-file-upload-button {
   height: 70px;
   width: 150px;
   font-size: 120%;
+  padding: 50px;
 }
-
-.theme-toggle {
-  margin: 20px;
-  height: 70px;
-  width: 150px;
-  background-color: #2b2b2b00;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-left: 20px;
-  font-size: 120%;
-  background-image: url("moon.png"); /* Set initial background image for light mode */
-  background-repeat: no-repeat; /* Prevent image tiling */
-  background-position: center; /* Center the image */
-  background-size: cover; /* Stretch the image to cover the button */
-  width: 30px; /* Adjust width as needed */
-  height: 30px; /* Adjust height as needed */
-}
-
-.light-mode .theme-toggle {
-  background-color: #dcdfe400;
-  background-image: url("sun.png"); /* Set background image for dark mode */
-}
-
-
 
 .reset {
-  margin: 10px 0px 10px 10px;
   background-color: #171717;
   color: #757575;
   border: none;
@@ -180,6 +188,7 @@ input[type="file"]::-webkit-file-upload-button {
   height: 70px;
   width: 150px;
   font-size: 120%;
+  padding: 50px;
 }
 
 table {
@@ -195,7 +204,7 @@ td {
 
   width: fit-content;
 }
-th{
+th {
   background-color: #2b2b2b;
   height: 30px;
 }
@@ -204,12 +213,11 @@ tr:nth-child(odd) {
   background-color: #2e2e2e;
 }
 
-
-img {
-width: 12vw;
+.picture-item img {
+  width: 12vw;
   height: 12vw;
-  min-width: 100px;
-  min-height: 100px;
+  /* min-width: 100px;
+  min-height: 100px; */
   object-fit: cover;
   border-radius: 15px;
   margin: 10px;
@@ -233,14 +241,14 @@ width: 12vw;
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 #logo-img {
-  width: 35px;
-  height: 35px;
+  width: 75px;
+  height: 75px;
+  margin: 0px;
 }
-
 
 input:focus,
 textarea:focus {
@@ -249,45 +257,166 @@ textarea:focus {
   box-shadow: 0 0 5px #c5384b;
 }
 
-/* Add this code to your existing CSS file or create a new one */
-.modal {
-  display: none;
+/* Add these styles to your existing CSS file or create a new one */
+
+.forms {
   position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
+  bottom: 0px;
+  right: 0px;
+  z-index: 4;
+  width: 90%;
+  height: fit-content;
+  padding: 40px;
+  background-color: #2b2b2b;
+  border-radius: 70px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px #0000006d30;
 }
 
+.btns {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+}
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 300px;
+.tabelka {
+  flex: 1;
+  height: auto;
+  margin-bottom: 120px;
+  background-color: #2b2b2b;
+  overflow-y: auto;
+  border-radius: 70px;
+
+  height: 80vh;
+  width: 100%;
+  /* WebKit scrollbar styles */
+  &::-webkit-scrollbar {
+    width: 0px; /* Adjust scrollbar width */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Remove background color */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c5384b; /* Set thumb color */
+    border-radius: 5px; /* Add rounded corners */
+  }
+}
+
+#picture-feed {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 40px;
+  height: 100%;
+  width: 100%;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c5384b;
+    border-radius: 5px;
+  }
+}
+
+.picture-item {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background-color: #171717;
+  border-radius: 30px;
+  position: relative;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 28vh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: -6px 13px 19px #0000003a;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.picture-item .content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-radius: 0 0 30px 30px;
+  z-index: 3;
+}
+
+.picture-item .rating {
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  background-color: #2b2b2bb1;
+  backdrop-filter: blur(10px);
+  width: 80px;
+  height: 80px;
+  border-radius: 25px;
+  color: #ffffff;
+  z-index: 3;
+  font-size: 250%;
+  border: 2px solid #ffffff0f;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  border-radius: 6px;
-  gap: 1rem;
 }
 
-.modal-content h2 {
-  color: black;
+.picture-item .description {
+  margin-top: auto;
+  z-index: 3;
 }
 
-.modal-content input {
-  padding: 10px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.picture-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(transparent, #000000);
+  z-index: 2;
+  border-radius: 30px;
 }
 
-/* Add these styles to your existing CSS file or create a new one */
+.picture-item h3 {
+  margin: 0;
+  z-index: 3;
+}
+
+.picture-item .rating {
+  margin: 5px 0;
+}
+
+.picture-item .description {
+  margin: 0;
+}
+
+.light-mode .picture-item .rating {
+  background-color: #ffffff60;
+  color: #000000;
+  border: 2px solid #00000030;
+}
+
+.light-mode .picture-item::after {
+  background-image: linear-gradient(transparent, #ffffff75);
+}
+
 body.light-mode {
   background-color: white; /* Light mode background color */
   color: black; /* Light mode text color */
@@ -301,7 +430,7 @@ body.light-mode {
 }
 
 .ligh-mode input[type="file"]::-webkit-file-upload-button {
-  background-color: #DCDFE4;
+  background-color: #dcdfe4;
 }
 
 .ligh-mode .picture-import {
@@ -309,36 +438,28 @@ body.light-mode {
   background-color: #ffffff;
 }
 
-
 .ligh-mode .reset {
   background-color: #ffffff;
   color: #757575;
 }
 
 .light-mode .forms {
-  background-color: #DCDFE4;
+  background-color: #dcdfe4;
 }
 .light-mode .tabelka {
-  background-color: #DCDFE4;
+  background-color: #dcdfe4;
 }
 .light-mode .navigation {
   background-color: #ffffff;
 }
 .ligh-mode #search-input {
-  background-color: #DCDFE4;
-}
-/* Add similar styles for other elements as needed */
-.ligh-mode table {
-  background-color: #DCDFE4;
+  background-color: #dcdfe4;
 }
 
-.light-mode th{
-  background-color: #DCDFE4;
+.light-mode h1 {
+  color: rgb(57, 57, 57);
 }
 
-.light-mode tr:nth-child(odd) {
-  background-color: #F1F2F4;
-}
 .ligh-mode :root {
   color-scheme: light;
 }
@@ -349,41 +470,115 @@ body.light-mode {
 }
 
 .light-mode input[type="file"]::-webkit-file-upload-button {
-  background-color: #F1F2F4; /* Change the background color for the upload button in light mode */
+  background-color: #f1f2f4; /* Change the background color for the upload button in light mode */
   color: #c5384b; /* Change the text color for the upload button in light mode */
 }
 .light-mode #search-input {
   color: #333333; /* Change the text color for light mode */
-  background-color: #DCDFE4; /* Change the background color for light mode */
+  background-color: #dcdfe4; /* Change the background color for light mode */
 }
 .light-mode .reset {
   background-color: #ffffff; /* Set the desired background color for the delete button in light mode */
   color: #333333; /* Set the desired text color for the delete button in light mode */
 }
-.light-mode tr:nth-child(even) {
-  background-color: #DCDFE4; /* Set the desired background color for even rows in light mode */
+
+.theme-toggle {
+  margin-top: 6px;
+  background-color: #2b2b2b00;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 120%;
+  background-image: url("moon.png"); /* Set initial background image for light mode */
+  background-repeat: no-repeat; /* Prevent image tiling */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Stretch the image to cover the button */
+  width: 75px; /* Adjust width as needed */
+  height: 75px; /* Adjust height as needed */
 }
 
-  
-@media (max-width: 890px) {
-  .navigation {
-      height: fit-content; /* Set the height of the navigation bar */
-      padding: 2vw;
-    }
-    #search-input {
-      width: 60vw;
-      height: min-content;
-      min-height: 10vw;
-    }
-    .forms {
-      display: none;
-    }
+.light-mode .theme-toggle {
+  background-color: #dcdfe400;
+  background-image: url("sun.png"); /* Set background image for dark mode */
+}
 
-    .tabelka {
-      width: 96vw;
-    }
-    h1 {
-      display: none;
-    }
+.delete-button {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  background-color: #2b2b2bb1;
+  backdrop-filter: blur(10px);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: #ffffff;
+  z-index: 3;
+  font-size: 170%;
+  border: 2px solid #ffffff0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 
+.delete-button img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.file-drop-zone {
+  background-color: #171717;
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-mode .file-drop-zone {
+  background-color: #ffffff;
+}
+
+.file-drop-zone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-drop-zone-content img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+#drop-zone-text {
+  font-size: 50px;
+  color: #c5384b;
+}
+
+.file-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.file-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
