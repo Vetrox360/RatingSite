@@ -188,9 +188,25 @@ document.querySelector(".forms").addEventListener("click", function (e) {
   }
 });
 const searchButton = document.querySelector('.searchb');
+const add = document.querySelector('.add');
 const searchInput = document.querySelector('.search');
 
 searchButton.addEventListener('click', () => {
   searchInput.focus();
 });
 
+const addButton = document.querySelector('.add');
+const forms = document.querySelector('.forms');
+let isFormsVisible = false;
+
+addButton.addEventListener('click', () => {
+  isFormsVisible = !isFormsVisible;
+
+  if (isFormsVisible) {
+    forms.style.display = 'flex';
+    addButton.style.backgroundImage = 'url("arrow.png")';
+  } else {
+    forms.style.display = 'none';
+    addButton.style.backgroundImage = 'url("add.png")';
+  }
+});
